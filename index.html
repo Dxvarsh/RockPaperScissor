@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockPaperScissor | Dx</title>
+
+    <link rel="shortcut icon" href="./assets/favicon-xwkF_A_9.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css" rel="stylesheet"/>
+  <link rel="stylesheet" crossorigin href="./assets/index-Z31t_iq8.css">
+</head>
+<body class="h-screen w-full m-0 p-0 box-border">
+
+    <!-- Username -->
+    <div class="h-full w-full bg-zinc-500 absolute transition-all" id="info">
+        <div class="absolute h-[30%] w-full border-zinc-500 top-36 flex items-center justify-around flex-col">
+            <div id="text" class="">
+                <h1 class="font-black tracking-wide text-4xl">Rock Paper Scissor</h1>
+            </div>
+            <div class="flex flex-col gap-4" id="card">
+                <input type="text" name="" id="name" placeholder="Player Name" class="w-72 h-10 px-2 rounded-md font-semibold">
+                <button id="check" onclick="playerName(document.getElementById('name').value)" class="bg-[#ed4859] rounded-md py-2 cursor-pointer font-bold">Play Game</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- main -->
+    <div id="main" class="h-screen w-full flex flex-col justify-evenly items-center bg-[#ed4859]">
+        <!-- dashboard -->
+        <div id="dashboard" class="absolute left-[-100%] h-screen w-[80%] bg-slate-100 rounded-r-3xl py-8 px-6 flex flex-col transition-all">
+            <div id="userInfo" class="flex items-center gap-3 font-black text-white w-full bg-[#383838] p-3 rounded-xl">
+                <img src="./assets/gamer-GTaIwvfy.png" alt="" class="w-12">
+                <h1 id="username" class="tracking-wider">PLAYER</h1>
+            </div>
+            <div class="font-black text-[#292929] flex justify-around my-8">
+                <div id="computerScore" >
+                    <h2>Computer Score: </h2>
+                    <h3 id="cScore" class="text-3xl">0</h3>
+                </div>
+                <div id="userScore">
+                    <h2>Your Score: </h2>
+                    <h3 id="yScore" class="text-3xl">0</h3>
+                </div>
+            </div>
+            <div id="socialLinks" class="absolute bottom-4 left-4 flex flex-wrap gap-2"> 
+                <a href="https://github.com/Dxvarsh" class="bg-[#010409] text-white px-4 py-2 rounded-lg font-semibold"><i class="ri-github-fill font-normal text-2xl mr-2"></i>GitHub</a>
+                <a href="https://www.linkedin.com/in/d-varsh-nagar-30738227b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="bg-[#0A66C2] text-white px-4 py-2 rounded-lg font-semibold"><i class="ri-linkedin-box-fill font-normal text-2xl mr-2"></i>Linkedin</a>
+                <a href="https://www.instagram.com/devarsh_8818?igsh=OGQ5ZDc2ODk2ZA==" class="bg-[#E4405F] text-white px-4 py-2 rounded-lg font-semibold"><i class="ri-instagram-line font-normal text-xl mr-2"></i>Instagram</a>
+                <a href="https://x.com/Devarsh_8818?t=GfGK5_Ozj1JsAHQ4dBZb_g&s=09" class="bg-[#010409] text-white px-4 py-2 rounded-lg font-semibold"><i class="ri-twitter-x-fill font-normal text-2xl mr-2"></i>Twitter</a>
+            </div>
+        </div>
+
+        <!-- menu ico -->
+        <i class="ri-menu-line absolute top-4 right-4 font-black text-3xl lg:hidden cursor-pointer" id="menu"></i>
+        <!-- Header -->
+        <div class="text-center" id="head">
+            <h1 class="font-black text-3xl md:text-5xl underline leading-[12vw] md:leading-[8vw]">Rock Paper Scissor</h1>
+            <h2 class="font-medium text-sm md:text-3xl">----Back to Childhood...!----</h2>
+        </div>
+
+        <!-- Cards -->
+        <div id="card" class="flex flex-col gap-14 sm:flex-row">
+            <div id="computerCard" class="h-40 w-36 bg-[#0a0a0a] rounded-md truncate">
+                <!--cHead #0a0a0a -->
+                <div class="h-[25%] w-[100%] bg-[#0a0a0a] flex flex-col items-center justify-center">
+                    <h1 class="text-white font-bold tracking-wider">DEVARSH</h1>
+                </div>
+                <!--cBody #282828 -->
+                <div class="h-[75%] w-[100%] bg-[#282828] bg-center bg-[length:100px_100px] bg-no-repeat" id="disp">
+
+                </div>
+            </div>
+            <div id="userCard" class="h-40 w-36 bg-[#0a0a0a] rounded-md truncate">
+                <div class="h-[25%] w-[100%] bg-[#0a0a0a] flex flex-col items-center justify-center">
+                    <h1 class="text-white font-bold tracking-widest" id="gamer">PLAYER</h1>
+                </div>
+                <!--cBody #282828 bg-cover-->
+                <div class="h-[75%] w-[100%] bg-[#282828] bg-center bg-[length:100px_100px] bg-no-repeat" id="dev">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex gap-10" id="btns">
+            <img class="w-14 lg:w-20 cursor-pointer" id="rock" src="./assets/rock-LIWzY0np.png" alt="">
+            <img class="w-14 lg:w-20 cursor-pointer" id="paper" src="./assets/paper1-4tzoKaRw.png" alt="">
+            <img class="w-14 lg:w-20 cursor-pointer" id="scissor" src="./assets/scissor-OySzJqeV.png" alt="">
+        </div>
+
+        <!-- result model -->
+        <div class="h-14 w-64 bg-slate-400 rounded-md absolute scale-0 transition" id="draw">
+            <h1 class="text-center font-bold text-2xl">Game Draw</h1>
+            <p class="text-center font-mono text-xs">Tap <i class="ri-menu-line font-black text-sm cursor-pointer" id="menu"></i> icon to see score</p>
+        </div>
+        <div class="h-14 w-64 bg-[#25D366] rounded-md absolute scale-0 transition-all" id="win">
+            <h1 class="text-center font-bold text-2xl">You Win🥳</h1>
+            <p class="text-center font-mono text-xs">Tap <i class="ri-menu-line font-black text-sm cursor-pointer" id="menu"></i> icon to see score</p>
+        </div>
+        <div class="h-14 w-72 bg-red-400 rounded-md absolute scale-0 transition-all" id="lose">
+            <h1 class="text-center font-bold text-2xl">Better luck next time🐤</h1>
+            <p class="text-center font-mono text-xs">Tap <i class="ri-menu-line font-black text-sm cursor-pointer" id="menu"></i> icon to see score</p>
+        </div>
+        <div class="h-14 w-72 bg-[#f8c408] rounded-md absolute scale-0 transition-all" id="over">
+            <h1 class="text-center font-bold text-2xl">GAME OVER</h1>
+            <p class="text-center font-mono text-xs">Tap <i class="ri-menu-line font-black text-sm cursor-pointer" id="menu"></i> icon to see score</p>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
