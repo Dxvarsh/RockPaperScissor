@@ -13,7 +13,7 @@ document.querySelector("#menu").addEventListener("click", function(){
 document.querySelector("#dashboard").style.display = 'block'
         document.querySelector("#dashboard").style.left = '-100%'
         toggelMenu = 1;
-}
+});
 
 document.querySelector("#dashboard").style.display = 'block'
         document.querySelector("#dashboard").style.left = '-100%'
