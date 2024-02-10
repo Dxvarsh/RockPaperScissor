@@ -16,12 +16,6 @@ document.querySelector("#menu").addEventListener("click", function(){
     }
 });
 
-document.querySelector("#dashboard").style.display = 'block'
-        document.querySelector("#dashboard").style.left = '-100%'
-        toggelMenu = 1;
-    }
-});
-
 function compChoice(){
     var option = ["rock", "paper", "scissor"];
     var rn = Math.floor(Math.random()*3);
